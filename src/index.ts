@@ -1,0 +1,41 @@
+import {
+  Beautifier,
+  Language,
+  BeautifierBeautifyData,
+  DependencyType,
+} from "unibeautify";
+import * as readPkgUp from "read-pkg-up";
+import options from "./options";
+
+const { pkg } = readPkgUp.sync({ cwd: __dirname });
+export const beautifier: Beautifier = {
+  name: {{ name }},
+  package: pkg,
+  dependencies: [
+    {
+      type: DependencyType.{{ type }},
+      name: {{ name }},
+      package: {{ packageName }},
+      badges: []
+    },
+  ],
+  options: {
+    
+  },
+  resolveConfig: () => {
+
+  },
+  beautify({
+    text,
+    options,
+    filePath,
+    projectPath,
+    dependencies,
+    beautifierConfig,
+  }: BeautifierBeautifyData) {
+    return new Promise<string>((resolve, reject) => {
+
+    });
+  },
+};
+export default beautifier;
