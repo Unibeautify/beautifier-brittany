@@ -9,13 +9,18 @@ import options from "./options";
 
 const { pkg } = readPkgUp.sync({ cwd: __dirname });
 export const beautifier: Beautifier = {
-  name: {{ name }},
+  name: "{{ name }}",
   package: pkg,
   dependencies: [
     {
       type: DependencyType.{{ type }},
-      name: {{ name }},
-      package: {{ packageName }},
+      name: "{{ name }}",
+      package: "{{ packageName }}",
+      program: "{{ packageName }}",
+      parseVersion: [],
+      homepageUrl: "{{ homepageUrl }}",
+      installationUrl: "{{ installationUrl }}",
+      bugsUrl: "{{ bugsUrl }}",
       badges: []
     },
   ],
