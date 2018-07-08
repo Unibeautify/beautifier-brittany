@@ -1,7 +1,7 @@
 {
   "name": "@unibeautify/beautifier-{{ dashedName }}",
   "version": "0.0.1",
-  "description": "{{ name }} beautifier for Unibeautify",
+  "description": "{{ packageName }} beautifier for Unibeautify",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
   "scripts": {
