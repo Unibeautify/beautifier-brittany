@@ -1,7 +1,7 @@
 {
-  "name": "@unibeautify/beautifier-{{ name }}",
+  "name": "@unibeautify/beautifier-{{ dashedName }}",
   "version": "0.0.1",
-  "description": "{{ description }}",
+  "description": "{{ name }} beautifier for Unibeautify",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Unibeautify/beautifier-{{ name }}.git"
+    "url": "git+https://github.com/Unibeautify/beautifier-{{ dashedName }}.git"
   },
   "keywords": [
     "eslint",
@@ -25,9 +25,9 @@
   "author": "Glavin Wiechert",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Unibeautify/beautifier-{{ name }}/issues"
+    "url": "https://github.com/Unibeautify/beautifier-{{ dashedName }}/issues"
   },
-  "homepage": "git+https://github.com/Unibeautify/beautifier-{{ name }}#readme",
+  "homepage": "git+https://github.com/Unibeautify/beautifier-{{ dashedName }}#readme",
   "peerDependencies": {
     "unibeautify": ">= 0.12.1"
   },
