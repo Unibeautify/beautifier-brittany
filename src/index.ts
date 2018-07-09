@@ -9,14 +9,14 @@ import options from "./options";
 
 const { pkg } = readPkgUp.sync({ cwd: __dirname });
 export const beautifier: Beautifier = {
-  name: "{{ name }}",
+  name: "{{ packageName }}",
   package: pkg,
   dependencies: [
     {
       type: DependencyType.{{ type }},
-      name: "{{ name }}",
+      name: "{{ packageName }}",
       package: pkg,
-      program: "{{ packageName }}",
+      program: "{{ exeCommand }}",
       parseVersion: [],
       homepageUrl: "{{ homepageUrl }}",
       installationUrl: "{{ installationUrl }}",
