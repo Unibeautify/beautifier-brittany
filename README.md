@@ -1,8 +1,8 @@
-# beautifier-{{dashedName}}
+# beautifier-{{ dashedName }}
 
-[![Build Status](https://travis-ci.com/Unibeautify/beautifier-{{dashedName}}.svg?branch=master)](https://travis-ci.com/Unibeautify/beautifier-eslint) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
+[![Build Status](https://travis-ci.com/Unibeautify/beautifier-{{ dashedName }}.svg?branch=master)](https://travis-ci.com/Unibeautify/beautifier-{{ dashedName }}) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
-> [{{name}}]({{homepageUrl}}) beautifier for [Unibeautify](https://github.com/Unibeautify)
+> [{{ packageName }}]({{homepageUrl}}) beautifier for [Unibeautify](https://github.com/Unibeautify)
 
 ## Installation
 
