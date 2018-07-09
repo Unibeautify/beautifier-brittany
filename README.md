@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Unibeautify/beautifier-{{ dashedName }}.svg?branch=master)](https://travis-ci.com/Unibeautify/beautifier-{{ dashedName }}) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
-> [{{ packageName }}]({{homepageUrl}}) beautifier for [Unibeautify](https://github.com/Unibeautify)
+> [{{ name }}]({{homepageUrl}}) beautifier for [Unibeautify](https://github.com/Unibeautify)
 
 ## Installation
 
