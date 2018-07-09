@@ -15,7 +15,7 @@ export const beautifier: Beautifier = {
     {
       type: DependencyType.{{ type }},
       name: "{{ name }}",
-      package: "{{ packageName }}",
+      package: pkg,
       program: "{{ packageName }}",
       parseVersion: [],
       homepageUrl: "{{ homepageUrl }}",
