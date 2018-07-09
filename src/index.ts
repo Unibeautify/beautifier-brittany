@@ -15,8 +15,8 @@ export const beautifier: Beautifier = {
     {
       type: DependencyType.{{ type }},
       name: "{{ name }}",
-      package: {{ packageName }}, //remove this line if executable
-      program: "{{ exeCommand }}", //remove this line if node
+      package: {{ packageName }}, // remove this line if executable
+      program: "{{ exeCommand }}", // remove this line if node
       parseVersion: [],
       homepageUrl: "{{ homepageUrl }}",
       installationUrl: "{{ installationUrl }}",
