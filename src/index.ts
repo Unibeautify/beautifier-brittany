@@ -1,34 +1,30 @@
 import {
   Beautifier,
-  Language,
   BeautifierBeautifyData,
   DependencyType,
+  ExecutableDependency
 } from "unibeautify";
 import * as readPkgUp from "read-pkg-up";
 import options from "./options";
 
 const { pkg } = readPkgUp.sync({ cwd: __dirname });
 export const beautifier: Beautifier = {
-  name: "{{ name }}",
+  name: "Brittany",
   package: pkg,
   dependencies: [
     {
-      type: DependencyType.{{ type }},
-      name: "{{ name }}",
-      package: "{{ packageName }}", // remove this line if executable
-      program: "{{ exeCommand }}", // remove this line if node
-      parseVersion: [],
-      homepageUrl: "{{ homepageUrl }}",
-      installationUrl: "{{ installationUrl }}",
-      bugsUrl: "{{ bugsUrl }}",
+      type: DependencyType.Executable,
+      name: "Brittany",
+      program: "brittany",
+      // parseVersion: [],
+      homepageUrl: "https://github.com/lspitzner/brittany",
+      installationUrl: "https://github.com/lspitzner/brittany#installation",
+      bugsUrl: "https://github.com/lspitzner/brittany/issues",
       badges: []
-    },
+    }
   ],
   options: {
-    
-  },
-  resolveConfig: () => {
-
+    Haskell: {}
   },
   beautify({
     text,
@@ -36,11 +32,17 @@ export const beautifier: Beautifier = {
     filePath,
     projectPath,
     dependencies,
-    beautifierConfig,
+    beautifierConfig
   }: BeautifierBeautifyData) {
-    return new Promise<string>((resolve, reject) => {
-
-    });
-  },
+    const brittany = dependencies.get<ExecutableDependency>("Brittany");
+    return brittany
+      .run({ args: [], stdin: text, options: {} })
+      .then(({ exitCode, stderr, stdout }) => {
+        if (exitCode) {
+          return Promise.reject(stderr);
+        }
+        return Promise.resolve(stdout);
+      });
+  }
 };
 export default beautifier;
