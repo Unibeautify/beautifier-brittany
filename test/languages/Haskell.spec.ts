@@ -22,7 +22,7 @@ function testFile(fixtureFileName: string) {
       .beautify({
         languageName: "Haskell",
         options: {},
-        text
+        text,
       })
       .then(results => {
         expect(raw(results)).toMatchSnapshot();
