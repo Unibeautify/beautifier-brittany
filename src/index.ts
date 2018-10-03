@@ -2,7 +2,7 @@ import {
   Beautifier,
   BeautifierBeautifyData,
   DependencyType,
-  ExecutableDependency
+  ExecutableDependency,
 } from "unibeautify";
 import * as readPkgUp from "read-pkg-up";
 import options from "./options";
@@ -20,11 +20,11 @@ export const beautifier: Beautifier = {
       homepageUrl: "https://github.com/lspitzner/brittany",
       installationUrl: "https://github.com/lspitzner/brittany#installation",
       bugsUrl: "https://github.com/lspitzner/brittany/issues",
-      badges: []
-    }
+      badges: [],
+    },
   ],
   options: {
-    Haskell: {}
+    Haskell: {},
   },
   beautify({
     text,
@@ -32,7 +32,7 @@ export const beautifier: Beautifier = {
     filePath,
     projectPath,
     dependencies,
-    beautifierConfig
+    beautifierConfig,
   }: BeautifierBeautifyData) {
     const brittany = dependencies.get<ExecutableDependency>("Brittany");
     return brittany
@@ -43,6 +43,6 @@ export const beautifier: Beautifier = {
         }
         return Promise.resolve(stdout);
       });
-  }
+  },
 };
 export default beautifier;
