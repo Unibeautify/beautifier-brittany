@@ -11,7 +11,18 @@ os:
 cache:
   directories:
   - node_modules
+addons:
+  apt:
+    packages:
+      - haskell-platform
 before_script:
+  # Upgrade to latest version of Cabal (Haskell package manager)
+  - cabal update
+  - cabal install Cabal cabal-install
+  - cabal --version
+  # Install beautifier
+  - cabal install brittany --bindir=$HOME/.cabal/bin
+  # Run CodeClimate
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter;
     elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -22,7 +33,6 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-
   - npm test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
