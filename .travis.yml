@@ -13,9 +13,11 @@ cache:
   - node_modules
   - $HOME/.stack
 before_install:
-  - mkdir -p ~/.local/bin
+  - mkdir -p $HOME/tmp
+  - mkdir -p $HOME/.local/bin
   - export PATH=$HOME/.local/bin:$PATH
-  - travis_retry curl -L https://get.haskellstack.org/stable/${TRAVIS_OS_NAME}-x86_64.tar.gz | tar -xz --strip-components=1 -C ~/.local/bin '*/stack'
+  - travis_retry curl -L https://get.haskellstack.org/stable/${TRAVIS_OS_NAME}-x86_64.tar.gz | tar -xz --strip-components=1 -C $HOME/tmp
+  - mv $HOME/tmp/stack $HOME/.local/bin/
   - stack --version
   - stack install brittany
   - brittany --version
