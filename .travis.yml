@@ -17,6 +17,8 @@ addons:
       - haskell-platform
 before_script:
   - cabal update
+  - cabal install Cabal cabal-install
+  - cabal --version
   - cabal install brittany --bindir=$HOME/.cabal/bin
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter;
