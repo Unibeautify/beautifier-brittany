@@ -11,6 +11,13 @@ os:
 cache:
   directories:
   - node_modules
+  - $HOME/.stack
+before_install:
+  - mkdir -p ~/.local/bin
+  - export PATH=$HOME/.local/bin:$PATH
+  - travis_retry curl -L https://get.haskellstack.org/stable/${TRAVIS_OS_NAME}-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+  - stack --version
+  - stack install brittany
 before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter;
