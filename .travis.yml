@@ -11,6 +11,8 @@ os:
 cache:
   directories:
   - node_modules
+ghc:
+  - "7.10"
 before_script:
   - cabal install brittany --bindir=$HOME/.cabal/bin
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
