@@ -12,7 +12,7 @@ cache:
   directories:
   - node_modules
   - $HOME/.stack
-before_install:
+before_script:
   - mkdir -p $HOME/tmp
   - mkdir -p $HOME/.local/bin
   - export PATH=$HOME/.local/bin:$PATH
@@ -21,13 +21,11 @@ before_install:
   - stack --version
   - stack install brittany
   - brittany --version
-before_script:
   - OS_NAME=$(uname | tr A-Z a-z)
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-${OS_NAME}-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-
   - npm test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
